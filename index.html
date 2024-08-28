@@ -24,7 +24,17 @@
     onclick="playGame('scissors')"
     >Scissors</button>
 
+    <button onclick="resetScore()"
+    >Reset Score</button>
+
     <script>
+
+        let score = JSON.parse(localStorage.getItem('score')) ||{
+             wins: 0,
+             losses: 0,
+             ties: 0};//setting a default score
+        
+
         function playGame (playerMove) {
                 const computerMove = pickComputerMove();
 
@@ -60,11 +70,38 @@
               }
             }
 
-            alert(`You chose ${playerMove}. Computer chose ${computerMove}. Result  '${result}'`);
-            
-        }
+            // updating results 
+            if (result ==='You won') {
+                score.wins++
+              } else if (result==='You lost') {
+                score.losses++
+              } else if (result==='Tie') {
+                score.ties++
+              }
 
-        
+              localStorage.setItem('score', JSON.stringify(score));
+              
+              
+
+            alert(`You chose ${playerMove}. Computer chose ${computerMove}. Result  '${result}'\nWins: ${score.wins}. Loses: ${score.losses}. Ties: ${score.ties}.`);
+        }
+        // Resetting scores
+        function resetScore () {
+          score.wins=0;
+          score.losses=0;
+          score.ties=0;
+          localStorage.removeItem('score')
+        } 
+
+        /*if (!score) {//!null means score===null
+          score = {//bcs of reassigning score here we need to 
+            wins: 0,
+            losses: 0,
+            ties: 0
+          }
+        }*/
+
+
         function pickComputerMove () {
             const randomNumber = Math.random();
             let computerMove ='';
@@ -78,6 +115,96 @@
 
             return computerMove;
         }
+    </script>
+
+    <!-- <script>
+      const object1 = {
+        name: 'Rokon',
+        age: 23,
+        body: {
+          height: '5.7 feet',
+          weight : '65kg'
+        },
+        'full-name': 'HS Rokon',
+        fun: function function1 () {
+          console.log('nested function inside obj')
+        }
+      }
+
+      console.log( typeof object1)
+      console.log(object1)
+      console.log(object1.body.height)
+      object1.body.weight='66kg';
+      console.log(object1)
+      object1.adding = `it's new`;
+      console.log(object1)
+
+      delete object1.adding
+      console.log(object1)
+      console.log(object1['full-name']); //Another way of targeting object
+      object1.fun()
+
+      const usingJSON = JSON.stringify(object1);
+      console.log(usingJSON)
+      console.log (JSON.parse(usingJSON));
+    </script> -->
+
+    <script>
+      //Auto boxing
+      console.log('my my'.length)
+      console.log(`here you're`.toLocaleUpperCase())
+
+      //Objects are references
+      const okay = {
+        say: 'goodbye'
+      };
+      const bye = okay;
+
+      console.log(bye)
+      okay.say='well hello there'//even though we changed a value of const but since it was object and obj are just references/paths of the data it doesn't bother const
+      console.log(okay)
+      console.log(bye)
+
+      const comparing = {
+        say: 'welcome'
+      }
+      console.log(okay===comparing)//even if we give same value to the objects they will be different bcs there reference/paths are different 
+      console.log(okay===bye)
+
+
+      //shortcuts
+      //destructing
+      const hmm = {
+        say: 'goodbye',
+        no: `don't come again`
+      };
+      //if the var name and the property name same  
+      //const say = hmm.say
+      //const no = hmm.no
+      const {say, no} = hmm;
+      console.log(say)
+      console.log(no)
+
+
+      //shorthand property
+      const newObj = {
+        //property:variable
+        //say:say 
+        say//if property and variable name is same
+      }
+      console.log(newObj)
+
+      //shorthand method
+      const newObj1 = {
+        say,
+        //  method: function function2 () {
+        //    console.log('before shorthand')
+        //  }
+        method() {
+          console.log('after shorthand')
+        }
+      }
+      newObj1.method()
     </script>
       
 </body>
