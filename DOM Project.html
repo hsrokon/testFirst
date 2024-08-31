@@ -17,23 +17,37 @@
 
 
 
-  <P class="mt-8 mb-2">Amazon Shipping Calculator</P>
+  <P class="mt-8 mb-2 font-semibold text-2xl">Amazon Shipping Calculator</P>
 
-  <input placeholder="Cost of order" class="js-cost-input border border-black p-2" onkeydown="handleCostKeydown();">
+  <p class="my-4">Orders under $40 = +$5 shipping</p>
+  <p class="my-4">Orders over $40 = FREE shipping</p>
 
-  <button onclick="calculateTotal();" class="border border-black p-2">Calculate</button>
+  <input placeholder="Cost of order" class="js-cost-input border border-black p-2" onkeydown="handleCostKeydown()">
 
-  <p class="js-total-cost"></p>
+  <button onclick="calculateTotal();" 
+  class="border border-black p-2">Calculate</button>
+
+  <p class="js-total-cost my-4"></p>
 
 
 
   <script>
   function handleCostKeydown () {
-    
+    if (event.key === 'Enter') {
+      calculateTotal()
+    }
   }  
 
   function calculateTotal() {
-   
+    const inputElement = document.querySelector('.js-cost-input')
+    let cost = Number(inputElement.value) ;
+
+    if (cost<40) {
+      cost+=5
+    }
+
+    document.querySelector('.js-total-cost')
+    .innerHTML=`Total cost :$${cost}`
   }
   
   function subscribe () {
