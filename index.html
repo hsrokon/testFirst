@@ -4,28 +4,37 @@
     <title>Test Page</title>
     <!-- <link rel="stylesheet" href="styles/styles.css"> -->
 
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h3>Play: RPS Game</h3>
+<body class="m-8">
+    <h3 class="font-bold text-3xl mb-4">Play: RPS Game</h3>
 
     <button
       onclick="playGame('rock')"
+      class="js-button border-2 border-green-500 p-2"
     >Rock</button>
 
 
     <button
     onclick="playGame('paper')"
+    class="border-2 border-green-500 p-2"
     >Paper</button>
 
 
     <button
     onclick="playGame('scissors')"
+    class="border-2 border-green-500 p-2"
     >Scissors</button>
 
-    <button onclick="resetScore()"
+    <p class="js-result my-4 font-semibold"></p>
+
+    <p class="js-score mt-4 font-semibold"></p>
+
+    <button onclick="resetScore(); updateScoreElement()"
+    class="border-2 border-green-500 p-2 my-4"
     >Reset Score</button>
+
 
     <script>
 
@@ -33,6 +42,9 @@
              wins: 0,
              losses: 0,
              ties: 0};//setting a default score
+
+        
+        updateScoreElement()
         
 
         function playGame (playerMove) {
@@ -81,10 +93,17 @@
 
               localStorage.setItem('score', JSON.stringify(score));
               
-              
+              updateScoreElement()
 
-            alert(`You chose ${playerMove}. Computer chose ${computerMove}. Result  '${result}'\nWins: ${score.wins}. Loses: ${score.losses}. Ties: ${score.ties}.`);
+              document.querySelector('.js-result')
+              .innerHTML=`${result}. <br>You chose ${playerMove}. Computer chose ${computerMove}.`;
         }
+
+        function updateScoreElement () {
+          document.querySelector('.js-score')
+            .innerHTML=`Wins: ${score.wins}. Loses: ${score.losses}. Ties: ${score.ties}.`
+        }
+
         // Resetting scores
         function resetScore () {
           score.wins=0;
@@ -149,7 +168,7 @@
       console.log (JSON.parse(usingJSON));
     </script> -->
 
-    <script>
+    <!-- <script>
       //Auto boxing
       console.log('my my'.length)
       console.log(`here you're`.toLocaleUpperCase())
@@ -205,7 +224,16 @@
         }
       }
       newObj1.method()
-    </script>
+
+
+
+    </script> -->
       
+    <script>
+      // document.body.innerHTML='<button>JS Button</button>'
+      // document.querySelector('button').innerHTML='changed'
+    //   const buttonElement = document.querySelector('.js-button')
+    //   console.log(buttonElement)
+    // </script>
 </body>
 </html>

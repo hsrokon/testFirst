@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Projects</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="w-11/12 mx-auto text-center">
+  <p>YouTube Subscribe  Button</p>
+  <button onclick=" subscribe () " class="m-4 p-4 border border-black js-subscribe-button"> 
+    Subscribe
+  </button>
+
+
+
+  <P class="mt-8 mb-2">Amazon Shipping Calculator</P>
+
+  <input placeholder="Cost of order" class="js-cost-input border border-black p-2" onkeydown="handleCostKeydown();">
+
+  <button onclick="calculateTotal();" class="border border-black p-2">Calculate</button>
+
+  <p class="js-total-cost"></p>
+
+
+
+  <script>
+  function handleCostKeydown () {
+    
+  }  
+
+  function calculateTotal() {
+   
+  }
+  
+  function subscribe () {
+    const buttonElement = document.querySelector('.js-subscribe-button')
+    // console.log(buttonElement)
+        if (buttonElement.innerHTML==='Subscribe') {
+            buttonElement.innerHTML='Subscribed';
+        } else {
+            buttonElement.innerHTML='Subscribe';
+        }
+    }
+    // subscribe()
+  </script>
+
+
+
+    <!-- clicks, kewdowns = events
+  onclic, onkeydown = event listeners
+
+  onclick = click
+  onkeydown = key press
+  onscroll = scrolling
+  onmouseenter = hovering over
+  onmouseleave = stop hovering over
+
+
+  Event is an Object
+  .key tells key that we're pressing 
+  event.key = specifies the key we're pressing
+
+  document object represents the webpage
+  window object represents the browser
+  -->
+</body>
+</html>
