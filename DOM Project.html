@@ -11,7 +11,8 @@
 
 <body class="w-11/12 mx-auto text-center">
   <p>YouTube Subscribe  Button</p>
-  <button onclick=" subscribe () " class="m-4 p-4 border border-black js-subscribe-button"> 
+  <button onclick=" subscribe () " class="m-4 p-4 rounded-full text-white bg-black
+  js-subscribe-button"> 
     Subscribe
   </button>
 
@@ -25,7 +26,7 @@
   <input placeholder="Cost of order" class="js-cost-input border border-black p-2" onkeydown="handleCostKeydown()">
 
   <button onclick="calculateTotal();" 
-  class="border border-black p-2">Calculate</button>
+  class="bg-green-600 text-white p-2">Calculate</button>
 
   <p class="js-total-cost my-4"></p>
 
@@ -55,8 +56,10 @@
     // console.log(buttonElement)
         if (buttonElement.innerHTML==='Subscribe') {
             buttonElement.innerHTML='Subscribed';
+            buttonElement.classList.add('bg-white' ,'text-black', 'border', 'border-black')
         } else {
             buttonElement.innerHTML='Subscribe';
+            buttonElement.classList.remove('bg-white' ,'text-black', 'border', 'border-black')
         }
     }
     // subscribe()
