@@ -13,19 +13,22 @@
     <button
       onclick="playGame('rock')"
       class="js-button border-2 border-green-500 p-2"
-    >Rock</button>
+       ><img class="w-28" src="images/rock-emoji.png" alt="">
+    </button>
 
 
     <button
-    onclick="playGame('paper')"
-    class="border-2 border-green-500 p-2"
-    >Paper</button>
+      onclick="playGame('paper')"
+      class="border-2 border-green-500 p-2"
+      ><img class="w-28" src="images/paper-emoji.png" alt="">
+    </button>
 
 
     <button
-    onclick="playGame('scissors')"
-    class="border-2 border-green-500 p-2"
-    >Scissors</button>
+      onclick="playGame('scissors')"
+      class="border-2 border-green-500 p-2"
+      ><img class="w-28" src="images/scissors-emoji.png" alt="">
+    </button>
 
     <p class="js-result my-4 font-semibold"></p>
 
@@ -96,7 +99,10 @@
               updateScoreElement()
 
               document.querySelector('.js-result')
-              .innerHTML=`${result}. <br>You chose ${playerMove}. Computer chose ${computerMove}.`;
+              .innerHTML=`${result}. <br>You 
+      <img class="w-12 inline" src="images/${playerMove}-emoji.png" alt="">
+      <img class="w-12 inline" src="images/${computerMove}-emoji.png" alt="">
+      computer.`;
         }
 
         function updateScoreElement () {
