@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+<body>
+    <script>
+        const birthDate = [1, 'date', {year:2000}, [2000, 2002]];
+        console.log(birthDate)
+
+        birthDate[1]='march';
+        console.log(birthDate[0])//'0' is the index
+        console.log(birthDate)
+
+        console.log(birthDate.length)
+
+        birthDate.push('added later')
+        console.log(birthDate)
+
+        birthDate.splice(3,2)//first one is index and second one is amount we want to remove
+        console.log(birthDate)
+    </script>
+</body>
+</html>
