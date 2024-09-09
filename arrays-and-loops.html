@@ -6,7 +6,7 @@
     <title>Arrays and Loops</title>
 </head>
 <body>
-    <script>
+    <!-- <script>
         const birthDate = [1, 'date', {year:2000}, [2000, 2002]];
         console.log(birthDate)
 
@@ -21,6 +21,36 @@
 
         birthDate.splice(3,2)//first one is index and second one is amount we want to remove
         console.log(birthDate)
+    </script> -->
+    
+    <script>
+        const todoList =['getting ready',
+            'take my watch',
+            'get the key',
+            'get the pendrive'
+        ];
+
+        for (let i=0; i<todoList.length; i++) {
+            const showList = todoList[i];
+            console.log(showList)
+        }
+
+        //Sum up an array
+        const array =[2, 3, 5];
+        let total =0;
+
+        for (let i=0; i<array.length; i++) {
+            total+=array[i]   
+        }
+        console.log(total)
+        //Doubling loop
+        const array2 =[];
+
+        for (let i=0; i<array.length; i++) {
+            let doubled = array[i]*2
+            array2.push(doubled)
+        }
+        console.log(array2)
     </script>
 </body>
 </html>

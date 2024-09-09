@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Todo List</title>
+</head>
+<body class="w-11/12 mx-auto">
+
+    <p class="mb-4 text-xl mt-4">Todo List</p>
+    <input class="border-2 border-black pl-3 py-1 js-input" type="text" placeholder="Todo name">
+    <button class="border-2 border-black p-1" 
+        onclick="addTodo()">Add</button>
+
+
+    <script>
+        const todoList=[];
+
+        function addTodo () {
+            const inputElement = document.querySelector('.js-input')
+            const name = inputElement.value
+
+            todoList.push(name)
+            console.log(todoList)
+
+            inputElement.value='';// resetting input box
+        }
+    </script>
+    
+</body>
+</html>
