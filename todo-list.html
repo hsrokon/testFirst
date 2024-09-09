@@ -13,9 +13,24 @@
     <button class="border-2 border-black p-1" 
         onclick="addTodo()">Add</button>
 
+    <div class="js-list"></div>
+
 
     <script>
-        const todoList=[];
+        const todoList=['Hamburger menu', 'Assignment'];
+        renderList()
+
+        function renderList() {
+            
+            let listHtml ='';
+
+            for (let i=0; i<todoList.length; i++) {
+                const todoItems = todoList[i];
+                const html = `<p>-${todoItems}</p> \n`;
+                listHtml+=html
+            }
+            document.querySelector('.js-list').innerHTML=listHtml
+        }
 
         function addTodo () {
             const inputElement = document.querySelector('.js-input')
@@ -24,7 +39,8 @@
             todoList.push(name)
             console.log(todoList)
 
-            inputElement.value='';// resetting input box
+            inputElement.value='';// resetting input box  
+            renderList()    
         }
     </script>
     
