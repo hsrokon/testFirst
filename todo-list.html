@@ -8,8 +8,8 @@
 </head>
 <body class="w-11/12 mx-auto">
 
-    <p class="mb-4 text-xl mt-4">Todo List</p>
-    <input class="border-2 border-black pl-3 py-1 js-input" type="text" placeholder="Todo name">
+    <p class="mb-4 text-xl mt-4 ">Todo List</p>
+    <input class="border-2 border-black pl-3 py-1 js-input mb-4" placeholder="Todo name">
     <button class="border-2 border-black p-1" 
         onclick="addTodo()">Add</button>
 
@@ -23,10 +23,14 @@
         function renderList() {
             
             let listHtml ='';
-
             for (let i=0; i<todoList.length; i++) {
                 const todoItems = todoList[i];
-                const html = `<p>-${todoItems}</p> \n`;
+                const html = `
+                <p class="py-2">-${todoItems} 
+                    <button 
+                    onclick="todoList.splice(${i}, 1); renderList()"
+                    class="border-2 border-black p-1">Delete</button> 
+                </p>`;
                 listHtml+=html
             }
             document.querySelector('.js-list').innerHTML=listHtml
