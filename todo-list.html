@@ -9,14 +9,18 @@
 <body class="w-11/12 mx-auto">
 
     <p class="mb-4 text-xl mt-4 ">Todo List</p>
-    <input class="border-2 border-black pl-3 py-1 js-input mb-4" placeholder="Todo name">
 
-    <input type="date" class="js-due-date 
-    border-2 border-black pl-3 py-[0.2rem]">
+    <div class="flex items-center mb-4 gap-2">
+        <input class="w-1/3 border-2 border-black pl-3 py-1 js-input" placeholder="Todo name">
 
-    <button class=" bg-green-500 py-[0.385rem] px-7 ml-2 text-white
-    hover:text-slate-700 hover:bg-green-300 transition ease-in-out duration-300" 
+        <input type="date" class="js-due-date w-1/3 
+        border-2 border-black pl-3 py-[0.2rem]">
+
+        <button class=" bg-green-500 py-[0.385rem] px-9 ml-2 text-white
+        hover:text-slate-700 hover:bg-green-300 transition ease-in-out duration-300" 
         onclick="addTodo()">Add</button>
+    </div>
+    
 
     <div class="js-list"></div>
 
@@ -32,19 +36,23 @@
 
         function renderList() {
             
-            let listHtml ='';
+            let listHtml =``;
             for (let i=0; i<todoList.length; i++) {
                 const todoObject = todoList[i];
                 const {name, dueDate} = todoObject;
                 // const {} = todoObject;
 
                 const html = `
-                <div class="py-2 block">-${name}</div>
-                <div class="block">${dueDate}</div>
-                <button 
-                onclick="todoList.splice(${i}, 1); renderList()"
-                class="block py-[0.385rem] px-7 ml-2 bg-red-500 text-white
-                hover:text-slate-600 hover:bg-red-300 transition ease-in-out duration-300">Delete</button> 
+                <div class="flex items-center mb-4 gap-2">
+                    <div class="w-1/3 
+                    break-words">${name}</div>
+                    <div class="w-1/3">${dueDate}</div>
+                    <button 
+                    onclick="todoList.splice(${i}, 1); renderList()"
+                    class="py-[0.385rem] px-7 ml-2 bg-red-500 text-white
+                    hover:text-slate-600 hover:bg-red-300 transition ease-in-out duration-300">Delete</button>
+                </div>
+                 
                 `;
                 listHtml+=html
             }
@@ -63,6 +71,7 @@
                 dueDate})
 
             inputElement.value='';// resetting input box  
+            dateElement.value='';
             renderList()    
         }
     </script>
