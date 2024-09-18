@@ -11,9 +11,11 @@
     <p class="mb-4 text-xl mt-4 ">Todo List</p>
     <input class="border-2 border-black pl-3 py-1 js-input mb-4" placeholder="Todo name">
 
-    <input type="date" class="js-due-date">
+    <input type="date" class="js-due-date 
+    border-2 border-black pl-3 py-[0.2rem]">
 
-    <button class="border-2 border-black p-1" 
+    <button class=" bg-green-500 py-[0.385rem] px-7 ml-2 text-white
+    hover:text-slate-700 hover:bg-green-300 transition ease-in-out duration-300" 
         onclick="addTodo()">Add</button>
 
     <div class="js-list"></div>
@@ -37,11 +39,13 @@
                 // const {} = todoObject;
 
                 const html = `
-                <p class="py-2">-${name} ${dueDate}
-                    <button 
-                    onclick="todoList.splice(${i}, 1); renderList()"
-                    class="border-2 border-black p-1">Delete</button> 
-                </p>`;
+                <div class="py-2 block">-${name}</div>
+                <div class="block">${dueDate}</div>
+                <button 
+                onclick="todoList.splice(${i}, 1); renderList()"
+                class="block py-[0.385rem] px-7 ml-2 bg-red-500 text-white
+                hover:text-slate-600 hover:bg-red-300 transition ease-in-out duration-300">Delete</button> 
+                `;
                 listHtml+=html
             }
             document.querySelector('.js-list').innerHTML=listHtml
