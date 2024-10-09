@@ -10,10 +10,10 @@
 
     <p class="mb-4 text-xl mt-4 ">Todo List</p>
 
-    <div class="flex items-center mb-4 gap-2">
-        <input class="w-1/3 border-2 border-black pl-3 py-1 js-input" placeholder="Todo name">
+    <div class="grid grid-cols-[1fr_1fr_auto] mb-4 gap-2">
+        <input class=" border-2 border-black pl-3 py-1 js-input" placeholder="Todo name">
 
-        <input type="date" class="js-due-date w-1/3 
+        <input type="date" class="js-due-date
         border-2 border-black pl-3 py-[0.2rem]">
 
         <button class=" bg-green-500 py-[0.385rem] px-9 ml-2 text-white
@@ -43,10 +43,10 @@
                 // const {} = todoObject;
 
                 const html = `
-                <div class="flex items-center mb-4 gap-2">
-                    <div class="w-1/3 
+                <div class="grid grid-cols-[1fr_1fr_auto] mb-4 gap-2">
+                    <div class="
                     break-words">${name}</div>
-                    <div class="w-1/3">${dueDate}</div>
+                    <div class="">${dueDate}</div>
                     <button 
                     onclick="todoList.splice(${i}, 1); renderList()"
                     class="py-[0.385rem] px-7 ml-2 bg-red-500 text-white

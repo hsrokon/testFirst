@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form with Enter Key</title>
+  <script>
+    // Function to handle keydown event and submit form on Enter key press
+    function handleKeyDown(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent the default form submission
+        submitLoginForm();
+      }
+    }
+
+    // Adding event listener to check for Enter key
+    window.onload = function () {
+      document.addEventListener('keydown', handleKeyDown);
+    };
+  </script>
+</head>
+<body>
+
+  <h2>Login Form</h2>
+
+  <!-- Form with required input fields -->
+  <form id="loginForm" action="/login" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Username" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Password" required><br><br>
+
+    <button type="submit">Login</button>
+  </form>
+
+</body>
+</html>
