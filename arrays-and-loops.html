@@ -51,6 +51,53 @@
             array2.push(doubled)
         }
         console.log(array2)
+
+        const array3 = array.slice();
+        array3.push(5,20)
+        console.log(array)
+        console.log(array3)
+
+        const [first1, second1] = [4, 6, 8]
+        console.log(first1)
+
+        for (let i = 0; i <= 10; i++) {
+            if (i===9) {
+                break;
+            }
+
+            if (i % 3 ===0) {
+                
+            } else {
+                continue
+            }
+            
+            console.log(i)
+        }
+
+        // for (let i = 0; i <= 10; i++) {
+        //     if (i === 9) {
+        //         break;
+        //     }
+
+        //     if (i % 3 !== 0) {
+        //         continue;
+        //     }
+
+        //     console.log(i);
+        // }
+
+        let i=0;
+        while (i <= 10) {
+            
+            if (i % 3 === 0) {
+                i++;
+                continue;
+            }
+
+            console.log(i)
+            i++;
+        }
+
     </script>
 </body>
 </html>
