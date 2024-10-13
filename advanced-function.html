@@ -6,23 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button class="clickBtn">click me</button>
     <script>
-        const anoFunction = function () {
-            console.log('my anonymous function');
-        }
-        anoFunction();
+        // const anoFunction = function () {
+        //     console.log('my anonymous function');
+        // }
+        // anoFunction();
 
-        setTimeout (function() {
-            console.log('timeout 1');
-            console.log('timeout 2');
-        }, 3000);
-        console.log('timer has been set')
+        // setTimeout (function() {
+        //     console.log('timeout 1');
+        //     console.log('timeout 2');
+        // }, 3000);
+        // console.log('timer has been set')
 
-        // setInterval(function(){
-        //     console.log('interval');
-        // }, 4000);
-        console.log('interval has been set');
+        // // setInterval(function(){
+        // //     console.log('interval');
+        // // }, 4000);
+        // console.log('interval has been set');
+
+        // const obj1 = {
+        //     method: () => {
+
+        //     },
+        //     method() {
+        //         //Shortcut way to run function
+        //     }
+        // }
+
+        const btnToClick = document.querySelector('.clickBtn');
+
+        const eventVar = ()=> {console.log('clicked')};
+
+        btnToClick.addEventListener('click', eventVar);
+        btnToClick.removeEventListener('click', eventVar);
+
+        btnToClick.addEventListener('click', ()=> {
+            console.log('second log')
+        });
     </script>
 
 </body>
