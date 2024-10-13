@@ -38,6 +38,9 @@
     class="border-2 border-green-500 p-2 my-4"
     >Reset Score</button>
 
+    <button onclick="autoPlay(); updateScoreElement()"
+    class="border-2 border-green-500 p-2 my-4"
+    >Auto Play</button>
 
     <script>
 
@@ -125,6 +128,22 @@
             ties: 0
           }
         }*/
+
+        let isAutoPlaying = false;
+        let intervalId;
+
+        function autoPlay() {
+          if (!isAutoPlaying) {
+            intervalId = setInterval(() => {
+              const playerMove = pickComputerMove();
+              playGame(playerMove);
+            }, 1000);
+            isAutoPlaying = true;
+          } else {
+            clearInterval(intervalId);
+            isAutoPlaying = false;
+          }
+        }
 
 
         function pickComputerMove () {
