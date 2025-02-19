@@ -8,10 +8,10 @@ for (const num of numbers) {
 console.log(doubledNumbers);
 
 //shortcut
-const doubledNum = numbers.map(n => n*2);//map loops an array puts in function & returns array
+const doubledNum = numbers.map(n => n*2);//map loops an array, for every element puts in function & returns array
 console.log(doubledNum);
 
 const classMates = ['Max', 'John', 'Andrew', "Gabriel"];
 
-const length = classMates.map(c => c.length); console.log(length);
-const fLetter = classMates.map(f => f[0]); console.log(fLetter);
+const length = classMates.map(c => c.length);  console.log(length);
+const fLetter = classMates.map(f => f[0]);     console.log(fLetter);
