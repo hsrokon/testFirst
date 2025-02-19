@@ -60,4 +60,4 @@ const productsName3 = arrayOfObjects.find(product => product.price<50000)
 console.log(productsName3);//{ id: 1, name: 'Google Pixel', price: 45000 } //returns only the first one that matches condition 
 
 const productsName4 = arrayOfObjects.reduce((p, c) => p + c.price, 0)
-console.log(productsName4);
+console.log(productsName4);//315000 //Note here we only adding price of current
