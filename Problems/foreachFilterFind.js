@@ -31,3 +31,33 @@ console.log(findResult);//700 -- only gives the firstOne value(not in array form
 const array1 = [5, 7, 8, 5, 8];
 const usingReduce = array1.reduce( (previous, current) => previous+ current, 0)
 console.log(usingReduce);
+
+
+//All use in one case example
+const arrayOfObjects = [
+    {id: 1, name: 'Google Pixel', price: 45000},
+    {id: 2, name: 'Iphone', price: 155000},
+    {id: 3, name: 'Samsung', price: 75000},
+    {id: 4, name: 'Huawei', price: 40000},
+]
+
+const productsName = arrayOfObjects.map(product => product.name);
+console.log(productsName);//[ 'Google Pixel', 'Iphone', 'Samsung', 'Huawei' ]
+
+const forEachArray = [];
+            arrayOfObjects.forEach(product => {
+                forEachArray.push(product.name)
+            })
+console.log(forEachArray);//[ 'Google Pixel', 'Iphone', 'Samsung', 'Huawei' ]
+
+const productsName2 = arrayOfObjects.filter(product => product.price>50000)
+console.log(productsName2);//[
+    // { id: 2, name: 'Iphone', price: 155000 },
+    // { id: 3, name: 'Samsung', price: 75000 }
+    //]
+
+const productsName3 = arrayOfObjects.find(product => product.price<50000)
+console.log(productsName3);//{ id: 1, name: 'Google Pixel', price: 45000 } //returns only the first one that matches condition 
+
+const productsName4 = arrayOfObjects.reduce((p, c) => p + c.price, 0)
+console.log(productsName4);
