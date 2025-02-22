@@ -9,7 +9,7 @@ console.log(secondReference);//[ 35, 87, 45, 90 ]
 
 const thirdReference = [...firstReference];//spread operator
 firstReference.push(89);
-console.log('this is first', firstReference);//[ 35, 87, 45, 90, 89 ]
+console.log('this is first', firstReference);//[ 35, 87, 45, 90, 89 ]//Non-primitive if not reassigned but changed partially since they indicate the same reference if one changes it's value thus others also change
 console.log('this is second', secondReference);//[ 35, 87, 45, 90, 89 ]
 console.log('this is third', thirdReference);//[ 35, 87, 45, 90 ]
 //Third operator has initial reference
